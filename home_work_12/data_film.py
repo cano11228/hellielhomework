@@ -25,12 +25,12 @@ films_titles = {
             "title": "Harry Potter and the Chamber of Secrets"
         },
         {
-            "imdb_id": "tt0330373",
-            "title": "Harry Potter and the Goblet of Fire"
-        },
-        {
             "imdb_id": "tt0373889",
             "title": "Harry Potter and the Order of the Phoenix"
+        },
+        {
+            "imdb_id": "tt0330373",
+            "title": "Harry Potter and the Goblet of Fire"
         }
     ]
 }
@@ -3804,3 +3804,23 @@ films_awards = [{'links': {'next': None, 'previous': None},
     'type': 'Nominee',
     'award_name': 'World Soundtrack Award',
     'award': 'Discovery of the Year'}]}]
+
+
+
+def create_awards_structure(films_awards):
+ result_list = []
+
+ for film_awards in films_awards:
+  for result in film_awards['results']:
+   award_dict = {
+    'type': result['type'],
+    'award_name': result['award_name'],
+    'award': result['award']
+   }
+   result_list.append(award_dict)
+
+ return result_list
+
+
+awards_list = create_awards_structure(films_awards)
+sorted_awards_list = sorted(awards_list, key=lambda x: x['award_name'])
