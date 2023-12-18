@@ -15,12 +15,10 @@ for film in films_titles["results"]:
     film_title = film["title"]
     film_directory = os.path.join(main_directory, film_title.replace(':', ''))
     os.makedirs(film_directory, exist_ok=True)
-    for letter in string.ascii_uppercase:
-        letter_directory = os.path.join(film_directory, letter)
-        os.makedirs(letter_directory, exist_ok=True)
 
 for letter in string.ascii_uppercase:
     letter_directory = os.path.join(film_directory, letter)
+    print(film_directory)
     os.makedirs(letter_directory, exist_ok=True)
 
     # Цикл для кожної нагороди фільму
