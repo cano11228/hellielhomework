@@ -1,8 +1,1 @@
-Choice Movie: Fight
-Choice Summer Movie
-Film - Choice Movie, Drama/Action Adventure
-Choice Movie: Sci-Fi/Fantasy
-Choice Movie - Drama/Action Adventure
 Choice Movie Actress: Fantasy
-Movies - Choice Drama
-Choice Summer Movie - Drama/Action Adventure
