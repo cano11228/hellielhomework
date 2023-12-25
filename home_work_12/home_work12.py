@@ -44,20 +44,20 @@ for genre in ganres_dict['results']:
     genre_name = genre['genre']
     os.makedirs(f'./genre_films/{genre_name}', exist_ok=True)
 
-# В кожній папці з жанорм створіть CSV файл, з заголовками стобців
-# Create genre folders if they don't exist
+
+
 for genre in ganres_dict['results']:
     genre_name = genre['genre']
     os.makedirs(f'./genre_films/{genre_name}', exist_ok=True)
 
-# Iterate through films and write data to relevant CSV files
+
 for film in films_data:
-    gen_list = [g['genre'] for g in film['gen']]  # Extract genre names
+    gen_list = [g['genre'] for g in film['gen']]
     for genre_name in gen_list:
-        csv_file = open(f'./genre_films/{genre_name}/movies.csv', 'a', encoding='utf-8')  # Open in append mode
+        csv_file = open(f'./genre_films/{genre_name}/movies.csv', 'a', encoding='utf-8')
         csv_writer = csv.writer(csv_file)
 
-        # Write only if the header hasn't been written yet
+
         if csv_file.tell() == 0:
             csv_writer.writerow(['title', 'year', 'rating', 'type', 'ganres',])
 
@@ -66,6 +66,6 @@ for film in films_data:
             film['year'],
             film['rating'],
             film['type'],
-            ','.join(gen_list),  # Include all genres in the 'ganres' column
+            ','.join(gen_list),git
         ])
         csv_file.close()
